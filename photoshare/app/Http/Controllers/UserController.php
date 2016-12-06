@@ -9,11 +9,7 @@ use App\Image as Product;
 
 class UserController extends Controller
 {
-    //
-    public function profile(){
-        $user = Auth::user();
-        return view('profile', ['user' => $user, 'images' => Product::where('user_id', $user->id)->get()]);
-    }
+
 
     public function update_avatar(Request $request){
         if($request->hasFile('avatar')){
@@ -24,7 +20,8 @@ class UserController extends Controller
             $user->avatar = $filename;
             $user->save();
         }
-        return view('profile', array('user' => Auth::user()));
+        $avatarPhoto = Product::where('user_id', Auth::user()->id)->get();
+        return view('profile', ['user' => Auth::user(), 'editable' => true, "images" => $avatarPhoto]);
     }
 
 
@@ -33,8 +30,8 @@ class UserController extends Controller
         $description = $request->input('description');
         $user->description = $description;
         $user->save();
-
-        return view('profile', array('user' => Auth::user()));
+        $avatarPhoto = Product::where('user_id', Auth::user()->id)->get();
+        return view('profile', ['user' => Auth::user(), 'editable' => true, "images" => $avatarPhoto]);
     }
 
 }

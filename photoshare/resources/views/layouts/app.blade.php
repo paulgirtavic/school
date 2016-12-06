@@ -76,7 +76,7 @@
                                     <li>
 
                                         &nbsp;@if(Auth::check() and Auth::user()->is_confirmed)
-                                        <li><a href="/profile">My Profile</a></li>
+                                        <li><a href="/profiles/{{Auth::user()->id}}">My Profile</a></li>
                                         @endif
                                     </li>
                                         <li>

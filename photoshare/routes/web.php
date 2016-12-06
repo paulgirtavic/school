@@ -25,7 +25,6 @@ Route::get('/photographers', 'photographers@index');
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/profile', 'UserController@profile');
 Route::post('/profile', 'UserController@update_avatar');
 
 Route::get('/profiles/{id}', 'profiles@profile');

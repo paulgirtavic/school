@@ -19,7 +19,7 @@ class ImageController extends Controller
     {
         $images = Image::paginate(10);
         if (Auth::check()) {
-            $loggedUserId= Auth::user()->idl;
+            $loggedUserId= Auth::user()->id;
         } else {
             $loggedUserId = -1;
 
