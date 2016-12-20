@@ -21,3 +21,7 @@ Route::get('/search', [
     'as' => 'api.search',
     'uses' => 'SearchController@search'
 ]);
+
+Route::get('/how-to', ['uses'=> 'ExifController@index']);
+Route::get('/exif/{image_id}', ['uses' => 'ExifController@image']);
+Route::get('/exif/{image_id}/json', ['uses' => 'ExifController@image_download']);

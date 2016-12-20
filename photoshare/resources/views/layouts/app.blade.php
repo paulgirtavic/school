@@ -58,6 +58,8 @@
                              <li><a href="/image"><span class="glyphicon glyphicon-camera"></span> Gallery</a></li>
                              <li> <a href="/image/create"><span class="glyphicon glyphicon-cloud-upload"></span> Upload</a></li>
                              <li> <a href="/forums"><span class="glyphicon glyphicon-comment"></span> Forum</a></li>
+                <li> <a href="/api/how-to"> API</a></li>
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
